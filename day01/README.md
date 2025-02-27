@@ -17,6 +17,7 @@
     $ du -sh /var/log
 
 🔹 Challenge 4: Create a new user called devops_user and add them to the sudo group.
+
     $ sudo useradd -m devops_user
     $ sudo passwd devops_user
     $ sudo usermod -aG sudo devops_user   
