@@ -50,10 +50,75 @@
 
 🔹 Challenge 4: Undo a commit using git reset (soft, mixed, and hard) and git revert – understand the differences.
 
+        echo "Hello Commits" > file.txt
+        git add file.txt
+        git commit -m "Add hello message"
+        git reset --soft HEAD~1 # Keeps changes staged.
+        git status 
+
+        git reset --mixed HEAD~1 # Unstages but keeps changes.
+        git status
+
+        git reset --hard HEAD~1 →#Deletes the commit and changes.
+        git status 
+
+        git revert HEAD # Creates a new commit to undo the changes.
+
 🔹 Challenge 5: Amend the last commit message and add a forgotten file to the last commit using git commit --amend.
+
+        git add forgotten-file.txt
+        git commit --amend
+
 
 🔹 Challenge 6: Set up Git hooks (pre-commit or post-commit) to automate a simple check before committing changes.
 
+
+        vi .git/hooks/pre-commit
+        # Add This script (/day04/pre-commit.sh) It Prevent Commits with "TODO" in Code
+        # give execute permission
+        chmod +x .git/hooks/pre-commit
+        #Try to commit sample commit with TODO
+        echo "TODO: Fix this bug" >> test.txt
+        git add test.txt
+        git commit -m "Test commit"
+
+        > 🚨 Commit rejected! Remove TODO comments before committing.
+
+        
 🔹 Challenge 7: Rebase a feature branch on top of the main branch without creating unnecessary merge commits.
 
+        #Make sure you're on the feature branch that needs rebasing:
+        git checkout feature-branch
+        #Before rebasing, ensure your main branch is up to date:
+        git fetch origin
+        git checkout main
+        git pull origin main
+
+        #Rebase the Feature Branch onto main
+        git checkout feature-branch
+        git rebase main
+        git push --force
+
 🔹 Challenge 8: Create a branch, make multiple commits, then squash them into a single commit using git rebase -i.
+
+
+        #Setup mulitple commits
+        git checkout -b feature-branch
+        echo "First change" > file.txt
+        git add file.txt
+        git commit -m "First commit"
+
+        echo "Second change" >> file.txt
+        git add file.txt
+        git commit -m "Second commit"
+
+        echo "Third change" >> file.txt
+        git add file.txt
+        git commit -m "Third commit"
+
+        #start interactive rebasing
+        git rebase -i HEAD~3 #This opens an editor showing the last 3 commits
+
+        #Change pick to squash (s) for the second and third commits:
+
+        git push --force
