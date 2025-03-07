@@ -45,7 +45,18 @@ curl http://127.0.0.1:5000/health
 .
 🔹 Challenge 4: Use Python subprocess to execute system commands and capture output.
 
+```python
+
+import subprocess
+
+output = subprocess.check_output(["echo", "Hello, World!"], text=True)
+print(output.strip())  # Output: Hello, World!
+
+```
+
 🔹 Challenge 5: Build a Flask API that fetches live weather data from an external API and returns it in JSON format.
+
+
 🔹 Challenge 6: Deploy a Django application on AWS EC2 with Nginx & Gunicorn.
 🔹 Challenge 7: Write a Python program to parse log files and extract failed SSH login attempts.
 🔹 Challenge 8: Use fabric or paramiko to automate SSH login and run commands on multiple servers.
