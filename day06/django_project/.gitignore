@@ -1,0 +1,28 @@
+# Python & Django files to ignore
+__pycache__/
+*.pyc
+*.pyo
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+
+# Django secret keys & local settings
+*.env
+*.ini
+config/settings_local.py  # If you have local settings
+
+# Database & migrations (optional)
+db.sqlite3
+migrations/
+
+# Logs
+*.log
+logs/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
