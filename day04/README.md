@@ -1,4 +1,4 @@
-### Day 04 Challenges: 
+### Day 04 Challenges: Git Advanced - Rebase, Cherry-pick, Conflict Resolution
 
 🔹Challenge 1: Perform an interactive rebase to modify commit history (rename, squash, reorder commits).
 

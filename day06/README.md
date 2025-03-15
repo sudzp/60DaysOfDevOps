@@ -1,4 +1,4 @@
-## Day 06 - Challenges
+## Day 06 - Challenges - Advanced Python for DevOps
 
 🔹 Challenge 1: Create a Python script that connects to a remote server via SSH using paramiko.
 
@@ -56,8 +56,11 @@ print(output.strip())  # Output: Hello, World!
 
 🔹 Challenge 5: Build a Flask API that fetches live weather data from an external API and returns it in JSON format.
 
+   [Weather Data](/day06/weather.py)
+
 
 🔹 Challenge 6: Deploy a Django application on AWS EC2 with Nginx & Gunicorn.
+
 🔹 Challenge 7: Write a Python program to parse log files and extract failed SSH login attempts.
 🔹 Challenge 8: Use fabric or paramiko to automate SSH login and run commands on multiple servers.
 🔹 Challenge 9: Implement a Python script that monitors Docker containers and sends alerts if a container crashes.

@@ -1,4 +1,4 @@
-### Day 03 Challenges:  
+### Day 03 Challenges:  Git & GitHub - Basics, Branching, Merging, PRs
 🔹 Challenge 1: Fork and clone an open-source project (Sample Project Link)
 
         git clone https://github.com/sudzp/eks-auto-mode.git

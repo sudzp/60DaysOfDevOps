@@ -1,4 +1,4 @@
-### Day 02 Challenges: 
+### Day 02 Challenges: Linux Shell Scripting & Automation
 
 🔹 Challenge 1: Write a simple Bash script that prints “Hello DevOps” along with the current date and time.
   

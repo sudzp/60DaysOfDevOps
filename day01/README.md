@@ -1,7 +1,6 @@
 ### Day 01 Challenges
 
 
-
 🔹 Challenge 1: List all files (including hidden ones) in your home directory and sort them by modification time.
 
     $ ls -lath ~
