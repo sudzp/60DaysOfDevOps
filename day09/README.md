@@ -23,6 +23,57 @@
 
 🔹 Challenge 2: Run a MySQL container with a named volume (mysql_data) and confirm data persistence after container restart.
 
+```bash
+
+#Create mysql container with named volume
+docker run -d --name day09_mysql \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=day09DB \
+  -v mysql_data:/var/lib/mysql \
+  mysql:latest
+
+#Access the mysql DB
+docker exec -it day09_mysql mysql -uroot -prootpassword
+
+#Create table in DB
+
+mysql> use day09DB
+mysql> CREATE TABLE day09_challenge(id int primary key, name varchar(50));
+mysql> insert into day09_challenge values(2, 'named volume');
+mysql> select * from day09_challenge;
+mysql> exit
+
+
+#Now stop and remove mysql continaer
+docker stop day09_mysql
+docker remove day09_mysql
+
+#check and inspect docker volume
+docker volume inspect mysql_data
+
+#Now again run the container and see of table exists
+docker run -d --name day09_mysql \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=day09DB \
+  -v mysql_data:/var/lib/mysql \
+  mysql:latest
+
+#Access the mysql DB and see table still exists
+docker exec -it day09_mysql mysql -uroot -prootpassword
+
+mysql> use day09DB
+mysql> select * from day09_challenge;
+mysql> exit
+
+
+#To cleanup data entirely , remove the volume after stopping and removing container.
+
+docker stop day09_mysql
+docker remove day09_mysql
+
+docker volume rm mysql_data
+```
+
 
 🔹 Challenge 3: Create a docker-compose.yml file to launch a Flask API and a PostgreSQL database together.
 
